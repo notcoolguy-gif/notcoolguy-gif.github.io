@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css"> <!-- Updated link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="profile-card">
+        <button class="back-button" onclick="window.location.href='dashboard.html'">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <div class="header">
+            <h3>User Profile</h3>
+        </div>
+        <div class="profile-info">
+            <div class="profile-header">
+                <div class="profile-image">
+                    <img src="https://via.placeholder.com/100" alt="Profile Image" id="profile-img">
+                    <input type="file" id="upload-img" style="display: none;">
+                    <label for="upload-img" class="upload-label">Change Photo</label>
+                </div>
+                <div class="user-info">
+                    <h2 id="username">Kartik Khorwal</h2>
+                    <p class="bio" id="user-bio" contenteditable="false">Write about yourself (but remember, it’s not a resume!).</p>
+                </div>
+            </div>
+        </div>
+        <button id="edit-btn">Edit</button> <!-- The Edit/Save button -->
+    </div>
+
+    <script src="profile.js"></script> <!-- Updated link -->
+</body>
+</html>

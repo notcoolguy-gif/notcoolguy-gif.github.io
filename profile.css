@@ -1,0 +1,211 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for body font */
+    background: url('https://shorturl.at/WpRRM') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    color: #E0E7FF; /* Light Gray */
+}
+
+/* Dark overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    z-index: 0;
+}
+
+/* Ensure content is above the overlay */
+.quiz-container, .profile-card {
+    position: relative;
+    z-index: 1;
+}
+
+.back-button {
+    position: fixed; /* Change to fixed for corner positioning */
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    background-color: #333; /* Dark gray background */
+    color: #E0E7FF; /* Light Gray */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif; /* Use Poppins for button font */
+    font-size: 14px; /* Larger font for emphasis */
+    z-index: 2; /* Ensure it’s above other elements */
+}
+
+.back-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Profile Card */
+.profile-card {
+    width: 400px;
+    background-color: #222; /* Darker Cosmic Gray for better contrast */
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif; /* Poppins for profile card */
+}
+
+/* Header section */
+.header {
+    background-color: #444; /* Darker header for better contrast */
+    padding: 20px;
+    color: #E0E7FF; /* Light Gray */
+    font-size: 1.5em; /* Slightly larger header font */
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: 'Montserrat', sans-serif; /* Montserrat for header */
+}
+
+/* Profile info section */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 20px;
+}
+
+/* Profile header section */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Profile image container */
+.profile-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image inside profile image container */
+.profile-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #1e1e1e; /* Slightly thicker border */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+    cursor: pointer;
+}
+
+/* Center the upload label over the image */
+.upload-label {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background */
+    color: #fff;
+    padding: 10px 15px; /* Increased padding for better touch area */
+    border-radius: 5px;
+    font-size: 0.95em; /* Adjusted font size */
+    font-family: 'Poppins', sans-serif; /* Use Poppins for upload label */
+    cursor: pointer;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Show label when hovering over the profile image during edit mode */
+#edit-btn.save-mode ~ .profile-image .upload-label {
+    display: block;
+}
+
+/* User info section */
+.user-info {
+    text-align: left;
+    color: #E0E7FF; /* Light Gray */
+}
+
+.user-info h2 {
+    font-size: 1.8em; /* Increased font size for emphasis */
+    margin-bottom: 8px;
+    color: #E0E7FF; /* Light Gray */
+    font-family: 'Poppins', sans-serif; /* Poppins for title */
+}
+
+.user-info .bio {
+    font-size: 1em; /* Adjusted font size */
+    color: #ddd; /* Lighter gray for bio */
+    margin-bottom: 15px;
+    line-height: 1.5; /* Increased line-height for readability */
+    padding: 10px;
+    background-color: #2c2c2c; /* Darker gray */
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif; /* Poppins for body font */
+}
+
+/* Edit button */
+#edit-btn {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #00A3A4; /* Teal */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'Poppins', sans-serif; /* Poppins for button */
+}
+
+#edit-btn:hover {
+    background-color: #007bff; /* Darker teal on hover */
+    transform: scale(1.05); /* Slightly scale on hover */
+}
+
+#edit-btn.save-mode {
+    background-color: #007bff; /* Blue */
+}
+
+/* Visual cue for editable fields */
+.editable {
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.editable:focus {
+    border-color: #00A3A4; /* Teal border on focus */
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .profile-card {
+        width: 90%; /* Use a larger percentage for better responsiveness */
+    }
+
+    .profile-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .user-info {
+        text-align: center;
+    }
+}
