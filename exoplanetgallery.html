@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exoplanet Gallery</title>
+  <link rel="stylesheet" href="exoplanetgallery.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Exoplanet Gallery</h1>
+      <p>Discover the wonders of distant worlds beyond our solar system.</p>
+    </div>
+  </header>
+
+  <div class="filter-container">
+    <input type="text" id="search-input" placeholder="Search for exoplanets...">
+    <select id="type-filter">
+      <option value="all">All Types</option>
+      <option value="Rocky">Rocky</option>
+      <option value="Gas Giant">Gas Giant</option>
+    </select>
+  </div>
+
+  <main>
+    <button class="back-button" onclick="window.location.href='dashboard.html';">← Back</button>
+    <div class="learning-hub-container" id="card-container">
+      <!-- Exoplanet cards will be rendered here by JavaScript -->
+    </div>
+  </main>
+
+  <div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2024 Exoplanet Gallery | Learn more about the universe</p>
+  </footer>
+
+  <script src="exoplanetgallery.js"></script>
+</body>
+</html>
