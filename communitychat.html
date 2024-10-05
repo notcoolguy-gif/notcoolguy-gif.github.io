@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbound - Community Chat</title>
+    <link rel="stylesheet" href="communitychat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Community Chat</h1>
+            <p>Connect with others passionate about exoplanets and share your insights.</p>
+        </div>
+    </header>
+
+    <main>
+        <button class="back-button" onclick="window.location.href='dashboard.html';">← Back</button>
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search groups..." />
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="learning-hub-container" id="chatList">
+            <!-- Chat Item 1 - Exoplanet Missions -->
+            <div class="card chat-item">
+                <div class="card-image">
+                    <img src="https://shorturl.at/vB1ra" alt="Exoplanet Missions Banner" class="chat-banner">
+                </div>
+                <div class="card-content">
+                    <h2>Exoplanet Missions</h2>
+                    <p>Share insights and updates on missions aimed at studying exoplanets, such as the James Webb Telescope.</p>
+                    <a href="exoplanetmission.html" class="check-out-btn">Check Out</a>
+                </div>
+            </div>
+
+            <!-- Chat Item 2 - Exoplanet Theory -->
+            <div class="card chat-item">
+                <div class="card-image">
+                    <img src="https://shorturl.at/ehHkl" alt="Exoplanet Theory Banner" class="chat-banner">
+                </div>
+                <div class="card-content">
+                    <h2>Exoplanet Theory</h2>
+                    <p>Discuss the latest theories and discoveries about exoplanets, their formation, and evolution.</p>
+                    <a href="exoplanettheory.html" class="check-out-btn">Check Out</a>
+                </div>
+            </div>
+
+            <!-- Chat Item 3 - Habitability and Life -->
+            <div class="card chat-item">
+                <div class="card-image">
+                    <img src="https://shorturl.at/oG7hT" alt="Habitability and Life Banner" class="chat-banner">
+                </div>
+                <div class="card-content">
+                    <h2>Habitability and Life</h2>
+                    <p>Explore what makes an exoplanet potentially habitable and the search for extraterrestrial life.</p>
+                    <a href="habitability.html" class="check-out-btn">Check Out</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Starbound | Join the conversation about the universe</p>
+    </footer>
+    
+    <script src="communitychat.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #121212; /* Dark mode background */
+    font-family: 'Exo 2', sans-serif;
+}
+
+/* Header Styles */
+header {
+    background-color: rgba(31, 31, 31, 0.8); /* Semi-transparent header background */
+    padding: 40px 20px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+}
+
+/* Search Bar Styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #2a2a2a;
+    padding: 8px;
+    border-radius: 25px; /* Rounded corners */
+    margin: 20px auto;
+    width: 90%; /* Full width */
+}
+
+.search-bar input {
+    width: 90%;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    color: #ffcc00;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.search-bar i {
+    color: #ffcc00;
+    font-size: 1rem;
+}
+
+/* Learning Hub Grid */
+.learning-hub-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+    .learning-hub-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .learning-hub-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Card Styles */
+.card {
+    background-color: rgba(30, 30, 30, 0.9); /* Slightly transparent card background */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease; /* Remove box-shadow transition for cards */
+    cursor: pointer; /* Pointer cursor for clickable cards */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    font-size: 1.5rem;
+    color: #f5f5f5; /* Lighter heading color */
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #d0d0d0; /* Slightly lighter text color */
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.check-out-btn {
+    background-color: #0CF1FF; /* Neon blue */
+    color: #0B0E2A; /* Dark text for contrast */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding */
+    font-size: 1rem; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transition effects */
+    /* Removed shadow for the "Check Out" button */
+}
+
+.check-out-btn:hover {
+    background-color: #1CB1FF; /* Slightly darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+    box-shadow: 0 0 15px rgba(12, 241, 255, 0.8), 0 0 30px rgba(12, 241, 255, 0.5); /* Glowing effect */
+}
+
+.check-out-btn:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 4px rgba(0, 207, 255, 0.5); /* Add focus ring */
+}
+
+/* Back Button Styles */
+.back-button {
+    position: absolute;
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    background-color: rgba(34, 34, 34, 0.8);
+    color: #E0E0E0; /* Light grey text */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    z-index: 3; /* Ensure it's above other elements */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5); /* Retained shadow for back button */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition effects */
+}
+
+.back-button:hover {
+    background-color: rgba(34, 34, 34, 1); /* Darker on hover */
+    box-shadow: 0 0 15px rgba(12, 241, 255, 0.8), 0 0 30px rgba(12, 241, 255, 0.5); /* Glowing effect on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(31, 31, 31, 0.8); /* Semi-transparent footer background */
+    color: #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Remove link outlines and underlines within cards */
+.card .card-content a {
+    outline: none; /* Remove the default focus outline */
+    text-decoration: none; /* Remove underline */
+}
