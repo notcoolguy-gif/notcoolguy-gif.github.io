@@ -1,0 +1,243 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif; /* Updated body text font */
+  background-image: url('https://shorturl.at/i3EvZ'); /* Background image */
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center; /* Center the image */
+  color: #e0e0e0; /* Celestial White */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative; /* Position for overlay */
+}
+
+/* Dark overlay */
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for readability */
+  z-index: 1; /* Sit on top of the background */
+}
+
+/* Header Styles */
+header {
+  background-color: rgba(31, 31, 31, 0.8); /* Semi-transparent header background */
+  padding: 40px 20px;
+  text-align: center;
+  color: #e0e0e0;
+  z-index: 2; /* Ensure header is above overlay */
+  position: relative; /* For positioning back button */
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align header content */
+}
+
+.back-button {
+  position: absolute;
+  left: 20px; /* Positioning from the left */
+  top: 20px; /* Positioning from the top */
+  background-color: rgba(34, 34, 34, 0.8);
+  color: #e0e0e0;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Roboto Mono', monospace; /* Updated font */
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: rgba(50, 50, 50, 0.8); /* Darker on hover */
+}
+
+header h1 {
+  font-family: 'Roboto Mono', monospace; /* Title font */
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #FFFFFF; /* Bright white */
+}
+
+header p {
+  font-size: 1.1rem;
+}
+
+/* Filter Styles */
+.filter-container {
+  display: flex;
+  flex-direction: column; /* Stack filters vertically on small screens */
+  align-items: center; /* Center the filters */
+  gap: 10px;
+  padding: 20px;
+  z-index: 2; /* Ensure filter is above overlay */
+}
+
+@media (min-width: 600px) {
+  .filter-container {
+    flex-direction: row; /* Row layout on larger screens */
+    justify-content: center; /* Center the filters */
+  }
+}
+
+#search-input {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #e0e0e0;
+  width: 100%; /* Full width for mobile */
+  max-width: 300px; /* Limit width on larger screens */
+}
+
+#search-input::placeholder {
+  color: #A0C4FF; /* Updated placeholder color */
+  opacity: 0.8; /* Slight transparency for a softer look */
+}
+
+#type-filter,
+#subject-filter,
+#age-filter {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: rgba(30, 30, 30, 0.8);
+  color: #e0e0e0;
+  width: 100%; /* Full width for mobile */
+  max-width: 200px; /* Limit width on larger screens */
+}
+
+/* Footer Styles */
+footer {
+  background-color: rgba(31, 31, 31, 0.8); /* Semi-transparent footer background */
+  color: #e0e0e0;
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+  z-index: 2; /* Ensure footer is above overlay */
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Learning Hub Grid */
+.learning-hub-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  z-index: 2; /* Ensure cards are above overlay */
+}
+
+@media (min-width: 768px) {
+  .learning-hub-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .learning-hub-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card Styles */
+.card {
+  background-color: rgba(30, 30, 30, 0.9); /* Slightly transparent card background */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Added filter transition */
+  cursor: pointer; /* Pointer cursor for clickable cards */
+  z-index: 2; /* Ensure card is above overlay */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.05); /* Slightly brighten the card */
+}
+
+.card img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.card h2 {
+  font-family: 'Baloo', sans-serif; /* Card title font */
+  font-size: 1.5rem;
+  margin: 15px;
+  color: #A0C4FF; /* Light blue for card titles */
+}
+
+.card p {
+  margin: 0 15px 15px;
+  font-size: 0.9rem;
+}
+
+/* Button Styles */
+button {
+  font-family: 'Roboto Mono', monospace; /* Updated button font */
+  background-color: #0CF1FF; /* Neon blue */
+  color: #0B0E2A; /* Dark text */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: #1CB1FF; /* Darker on hover */
+  box-shadow: 0 0 20px #1CB1FF; /* Glow effect on hover */
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000; /* High z-index for modal */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px; /* Limit modal width */
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #0CF1FF; /* Neon blue for close button */
+  text-decoration: none;
+  cursor: pointer;
+}

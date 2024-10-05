@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exoplanets Learning Hub</title>
+  <link rel="stylesheet" href="learningmaterial.css"> <!-- Updated link -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Nunito:wght@400&family=Baloo:wght@500&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <button class="back-button" onclick="goBack()">
+        <i class="fas fa-arrow-left"></i> Back
+      </button>
+      <h1>Learning Material</h1>
+      <p>Explore various activities and resources to enhance your learning experience.</p>
+    </div>
+  </header>
+
+  <div class="filter-container">
+    <input type="text" id="search-input" placeholder="Search for materials...">
+    <select id="type-filter">
+      <option value="all">All Types</option>
+      <option value="Classroom Activity">Classroom Activity</option>
+      <option value="Demonstration">Demonstration</option>
+      <option value="Family Activity">Family Activity</option>
+      <option value="Game">Game</option>
+      <option value="Lab">Lab</option>
+      <option value="Out-of-School Activity">Out-of-School Activity</option>
+      <option value="Problem Set">Problem Set</option>
+      <option value="Teachable Moments">Teachable Moments</option>
+      <option value="Unit">Unit</option>
+      <option value="Video">Video</option>
+      <option value="Writing Assignment">Writing Assignment</option>
+    </select>
+    <select id="subject-filter">
+      <option value="all">All Subjects</option>
+      <option value="Art">Art</option>
+      <option value="Engineering">Engineering</option>
+      <option value="English Language Arts">English Language Arts</option>
+      <option value="Mathematics">Mathematics</option>
+      <option value="Science">Science</option>
+      <option value="Technology">Technology</option>
+    </select>
+    <select id="age-filter">
+      <option value="all">All Ages</option>
+      <option value="0">Kindergarten</option>
+      <option value="1">Grade 1</option>
+      <option value="2">Grade 2</option>
+      <option value="3">Grade 3</option>
+      <option value="4">Grade 4</option>
+      <option value="5">Grade 5</option>
+      <option value="6">Grade 6</option>
+      <option value="7">Grade 7</option>
+      <option value="8">Grade 8</option>
+      <option value="9">Grade 9</option>
+      <option value="10">Grade 10</option>
+      <option value="11">Grade 11</option>
+      <option value="12">Grade 12</option>
+    </select>
+  </div>
+
+  <main>
+    <div class="learning-hub-container" id="card-container">
+      <!-- Exoplanet cards will be rendered here by JavaScript -->
+    </div>
+  </main>
+
+  <div id="modal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2024 Exoplanet Learning Hub | Learn more about the universe</p>
+  </footer>
+
+  <script src="learningmaterial.js"></script> <!-- Updated link -->
+</body>
+</html>
