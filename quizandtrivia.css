@@ -1,0 +1,230 @@
+/* Basic reset and font settings */
+body {
+    font-family: 'Exo 2', sans-serif;
+    background: url('https://shorturl.at/GJvtx') no-repeat center center fixed;
+    background-size: cover;
+    color: #E0E0E0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Full-screen overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    z-index: 998; /* Below quiz container but above background */
+}
+
+/* Container for the quiz content */
+.quiz-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.9); /* Dark grey modal */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1000; /* Above overlay */
+}
+
+/* Emergency Exit Button */
+#modalExitButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 0, 0, 0.7); /* Semi-transparent red */
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.3s;
+    z-index: 1001; /* Above the modal content */
+}
+
+#modalExitButton:hover {
+    background: rgba(255, 0, 0, 1); /* Solid red on hover */
+    transform: scale(1.05);
+}
+
+/* Styling for the question text */
+.question-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    margin: 20px 0;
+    color: #00A3A4;
+}
+
+/* Container for answer choices */
+.answer-choices {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 10px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+/* Styling for answer buttons */
+.answer-choices button {
+    background: #333333;
+    border: none;
+    color: #F2D64B;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    width: 100%; /* Ensures buttons fill the grid cells */
+}
+
+.answer-choices button:hover {
+    background: #00A3A4;
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 163, 164, 0.5);
+}
+
+/* Feedback message */
+.feedback-message {
+    font-size: 24px;
+    color: #FFFFFF;
+    visibility: hidden;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(30, 30, 30, 0.9); /* Darker background for visibility */
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 1000;
+    transition: visibility 0.3s, opacity 0.3s ease;
+}
+
+/* Result screen */
+.result-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 2000;
+}
+
+/* Result container */
+.result-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center the content */
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Result text styling */
+.result-correct-text {
+    margin-bottom: 20px; /* Space below result text */
+}
+
+/* Button container for Retry and Exit */
+.button-container {
+    display: flex; /* Use flexbox to position buttons side by side */
+    gap: 20px; /* Space between buttons */
+}
+
+/* Retry button */
+.retry-button {
+    background: #4caf50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.retry-button:hover {
+    background: #388e3c; /* Darker Green */
+    transform: scale(1.05);
+}
+
+/* Exit button */
+.exit-button {
+    background: #d32f2f; /* Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px; /* Rounded corners */
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.exit-button:hover {
+    background: #c62828; /* Darker Red */
+}
+
+/* Confirmation Modal */
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000; /* Above all other elements */
+}
+
+.modal-content {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    color: #E4E4E4;
+}
+
+.modal-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+#confirmExit {
+    background: #d32f2f; /* Red */
+    color: white;
+}
+
+#cancelExit {
+    background: #4caf50; /* Green */
+    color: white;
+}
+
+#confirmExit:hover {
+    background: #c62828; /* Darker Red */
+}
+
+#cancelExit:hover {
+    background: #388e3c; /* Darker Green */
+}

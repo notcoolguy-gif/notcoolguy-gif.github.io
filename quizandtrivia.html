@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Nunito:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quizandtrivia.css"> <!-- Renamed to quizandtrivia.css -->
+</head>
+<body>
+    <div class="overlay"></div> <!-- Full-screen Overlay -->
+    <div class="quiz-container" id="quiz-container">
+        <button id="modalExitButton" class="exit-button">X</button> <!-- Emergency Exit Button -->
+        <div id="questionCount" class="question-count"></div>
+        <div id="questionText" class="question-text"></div>
+        <div id="feedbackMessage" class="feedback-message"></div>
+        <div id="answerChoices" class="answer-choices"></div>
+    </div>
+
+    <div class="result-screen" style="visibility: hidden;">
+        <div class="result-container">
+            <p id="resultCorrect" class="result-correct-text"></p>
+            <div class="button-container"> <!-- New container for buttons -->
+                <button id="retryButton" class="retry-button">Retry</button>
+                <button id="exitButton" class="exit-button">Exit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="confirmation-modal" style="display: none;">
+        <div class="modal-content">
+            <p>Are you ready to blast off? If you leave now, your current progress might just drift away into the cosmos!</p>
+            <button id="confirmExit">Yes, I'm ready!</button>
+            <button id="cancelExit">No, take me back!</button>
+        </div>
+    </div>
+
+    <script src="quizandtrivia.js"></script> <!-- Renamed to quizandtrivia.js -->
+</body>
+</html>
