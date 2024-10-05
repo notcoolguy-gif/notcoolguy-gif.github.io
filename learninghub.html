@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exoplanets Learning Hub</title>
+  <link rel="stylesheet" href="learninghub.css">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Nunito:wght@400&family=Baloo:wght@500&display=swap">
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Exoplanets Learning Hub</h1>
+      <p>Discover the wonders of distant worlds beyond our solar system.</p>
+    </div>
+  </header>
+
+  <main>
+    <button id="back-button" class="back-button" aria-label="Go back">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+    <div class="learning-hub-container">
+      <!-- Exoplanet Myths and Facts Card -->
+      <div class="card" onclick="openModal('myths-facts')">
+        <div class="card-image">
+          <img src="https://shorturl.at/CWlOR" alt="Exoplanet Myths and Facts">
+        </div>
+        <div class="card-content">
+          <h2>Exoplanet Myths and Facts</h2>
+          <p>Debunk common myths about exoplanets and discover fascinating facts about these distant worlds.</p>
+          <button aria-label="Learn more about Exoplanet Myths and Facts">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Methods of Detection Card -->
+      <div class="card" onclick="openModal('detection')">
+        <div class="card-image">
+          <img src="https://shorturl.at/3bT3J" alt="Methods of Detection">
+        </div>
+        <div class="card-content">
+          <h2>Methods of Detection</h2>
+          <p>Learn about the different techniques used to detect exoplanets, including transit method and radial velocity.</p>
+          <button aria-label="Learn more about Methods of Detection">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Habitable Zones Card -->
+      <div class="card" onclick="openModal('habitable')">
+        <div class="card-image">
+          <img src="https://shorturl.at/byEHA" alt="Habitable Zones">
+        </div>
+        <div class="card-content">
+          <h2>Habitable Zones</h2>
+          <p>Discover the concept of habitable zones and why they matter in the search for life beyond Earth.</p>
+          <button aria-label="Learn more about Habitable Zones">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Atmospheres and Composition Card -->
+      <div class="card" onclick="openModal('atmospheres')">
+        <div class="card-image">
+          <img src="https://shorturl.at/M99oS" alt="Atmospheres and Composition">
+        </div>
+        <div class="card-content">
+          <h2>Atmospheres & Composition</h2>
+          <p>Dive into the atmospheres of exoplanets and the significance of their composition for potential life.</p>
+          <button aria-label="Learn more about Atmospheres & Composition">Learn More</button>
+        </div>
+      </div>
+
+      <!-- Famous Exoplanet Discoveries Card -->
+      <div class="card" onclick="openModal('discoveries')">
+        <div class="card-image">
+          <img src="https://shorturl.at/0G2lx" alt="Famous Exoplanet Discoveries">
+        </div>
+        <div class="card-content">
+          <h2>Famous Exoplanet Discoveries</h2>
+          <p>Read about the most famous exoplanet discoveries that have changed how we view the universe.</p>
+          <button aria-label="Learn more about Famous Exoplanet Discoveries">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal Structure -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()" aria-label="Close modal">&times;</span>
+      <div id="modal-body">
+        <!-- Content will be dynamically inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2024 Exoplanet Learning Hub | Learn more about the universe</p>
+  </footer>
+
+  <script src="learninghub.js"></script>
+</body>
+</html>
